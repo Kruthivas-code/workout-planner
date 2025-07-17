@@ -3,7 +3,6 @@
 import { LogIn, UserPlus, LogOut, User, Crown, CreditCard } from "lucide-react";
 
 import { useI18n } from "locales/client";
-import { LogoSvg } from "@/components/svg/LogoSvg";
 import { LanguageSelector } from "@/widgets/language-selector/language-selector";
 import { usePremiumStatus } from "@/shared/lib/premium/use-premium";
 import { ThemeToggle } from "@/features/theme/ThemeToggle";
