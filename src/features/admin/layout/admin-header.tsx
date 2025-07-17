@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { LogOut, Menu, X, UserCog } from "lucide-react";
 
-import Logo from "@public/logo.png";
+import { LogoSvg } from "@/components/svg/LogoSvg";
 import { PLACEHOLDERS } from "@/shared/constants/placeholders";
 import { paths } from "@/shared/constants/paths";
 import { useLogout } from "@/features/auth/model/useLogout";
