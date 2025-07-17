@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { LogIn, UserPlus, LogOut, User, Crown, CreditCard } from "lucide-react";
 
 import { useI18n } from "locales/client";
