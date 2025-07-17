@@ -33,17 +33,17 @@ export const Header = () => {
           </div>
 
           <ul
-            className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 dark:bg-black dark:text-gray-200 rounded-box w-52 border border-slate-200 dark:border-gray-800"
+            className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-white rounded-box w-52 border border-slate-200"
             tabIndex={0}
           >
             <li>
-              <span className="flex items-center gap-2 text-base text-gray-500 dark:text-gray-400 cursor-not-allowed">
+              <span className="flex items-center gap-2 text-base text-gray-500 cursor-not-allowed">
                 <User className="w-4 h-4" />
                 {t("commons.profile")} ({t("commons.demo_mode")})
               </span>
             </li>
             <li>
-              <span className="flex items-center gap-2 text-base text-gray-500 dark:text-gray-400 cursor-not-allowed">
+              <span className="flex items-center gap-2 text-base text-gray-500 cursor-not-allowed">
                 Demo Mode - No Authentication
               </span>
             </li>
