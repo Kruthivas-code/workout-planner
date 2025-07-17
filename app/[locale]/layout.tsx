@@ -1,7 +1,3 @@
-import { Inter, Permanent_Marker } from "next/font/google";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-
 import { Providers } from "app/[locale]/providers";
 import { cn } from "@/shared/lib/utils";
 import { generateStructuredData, StructuredDataScript } from "@/shared/lib/structured-data";
