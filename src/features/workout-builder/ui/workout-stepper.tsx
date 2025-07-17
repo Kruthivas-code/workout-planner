@@ -289,12 +289,7 @@ export function WorkoutStepper() {
         <HorizontalTopBanner adSlot={env.NEXT_PUBLIC_TOP_STEPPER_STEP_3_BANNER_AD_SLOT} />
       )}
 
-      {/* Progress bar - completely independent */}
-      <div className="px-2 sm:px-6 mb-6">
-        <StepperHeader currentStep={currentStep} onStepClick={handleStepClick} steps={steps} />
-      </div>
-
-      {/* Content area - completely independent */}
+      {/* Content area - full width */}
       <div className="px-2 sm:px-6 flex-1 overflow-y-auto">
         {renderStepContent()}
       </div>
