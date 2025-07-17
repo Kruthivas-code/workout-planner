@@ -1,69 +1,60 @@
 <analysis>
-The AI engineer's trajectory showcases a systematic approach to debugging and enhancing a Next.js application, MuscleMap. Initially, the focus was on resolving critical infrastructure issues: a PostgreSQL user configuration error that prevented supervisor services from starting, and subsequently fixing incorrect PostgreSQL paths. Following this, the engineer addressed a user-reported Error loading exercises issue, diagnosing it as a disconnected database and implementing a mock data solution to enable the feature for demonstration. The work then pivoted to significant UI/UX refinements, including fixing persistent font loading errors by switching to system fonts, and then extensively restructuring the layout of the workout builder. This involved making CTA buttons sticky, removing redundant card containers, and refining background colors, culminating in a clean, functional demo version with a focus on visual consistency and user experience.
+The AI engineer's work involved a multi-faceted approach to stabilize and enhance the MuscleMap application. Initially, critical infrastructure issues were addressed: a PostgreSQL installation, user, and path configuration error within Supervisor, and resolving Next.js cross-origin domain blocking in . Despite attempts to debug a persistent Continue button disabled issue in the workout builder (linked to  still querying a database despite being mocked, and unresponsive UI elements), the task was paused by user intervention. The focus then shifted entirely to significant UI/UX overhauls: a comprehensive removal of dark mode across the entire application's styling and components, followed by relocating the 'Premium' feature to a prominent top-navbar button and improving sidebar navigation contrast. These latter UI changes were successfully completed and verified.
 </analysis>
 
 <product_requirements>
-The application, originally Workout.cool, is an MVP fitness coaching platform built with Next.js, React, Prisma, PostgreSQL, and Tailwind CSS. The user tasked the AI engineer with several improvements and fixes:
-1.  **Fix Hydration Error:** Resolve front-end hydration issues stemming from dynamic structured data.
-2.  **Fix HTTP ERROR 502:** Address server crashes causing unresponsiveness.
-3.  **Rebrand Application:** Change the name to MuscleMap, update branding elements, and implement a bicep curl icon across the UI, configurations, and metadata.
-4.  **Responsive Layout Conversion:** Transition from a mobile-first UI to a responsive web application layout, specifically by moving the bottom navigation to a left sidebar on larger screens.
-5.  **Remove Top Bar Branding:** Eliminate the MuscleMap logo and text from the main header.
-6.  **Remove Bottom Bar:** Delete the footer containing social links and policy links.
-7.  **Fix Exercise Loading Issue:** Resolve Error loading exercises, ensuring database connectivity and data display.
-8.  **Remove Background Image:** Replace complex background gradients with solid colors (light grey:  for light mode, dark black:  for dark mode).
-9.  **Disable Auth Features:** Remove authentication-related components and API calls to simplify into a static/demo version.
-10. **Refine Workout Builder Layout:** Remove progress bar and CTA from inside the main card container, move them outside while maintaining position, and apply consistently across all steps (equipment, muscle, exercise selection). Ensure CTAs remain visible at all times (sticky), replace dark blue CTA background with light black, and remove background/border from the entire card container while retaining individual equipment card styling.
+The application, MuscleMap (formerly Workout.cool), is an MVP fitness coaching platform built with Next.js, React, Prisma, PostgreSQL, and Tailwind CSS. The user requested several improvements and fixes:
+1.  Resolve front-end hydration and HTTP 502 errors.
+2.  Rebrand to MuscleMap with an updated bicep curl icon.
+3.  Transition to a responsive web layout, moving the bottom navigation to a left sidebar on larger screens.
+4.  Remove top bar branding and the bottom footer.
+5.  Fix Error loading exercises by ensuring database connectivity and data display.
+6.  Replace complex background gradients with solid light grey () and dark black () colors.
+7.  Disable authentication features for a static/demo version.
+8.  Refine the Workout Builder layout: move the progress bar and CTA outside the main card, make CTAs sticky, change the dark blue CTA background to light black, and remove the main card container's background/border.
+9.  **Recently added**: Completely remove dark mode, enforcing a light theme with white/very light gray backgrounds and dark text.
+10. **Recently added**: Remove 'Premium' from the sidebar, add a primary-styled 'Premium' button to the top navbar on the left side, and increase the contrast of inactive sidebar items with noticeable hover effects.
 </product_requirements>
 
 <key_technical_concepts>
--   **Full-stack Development:** React (Next.js) frontend with Prisma ORM and PostgreSQL.
--   **Environment/Process Management:** Supervisor for service control,  for package management.
--   **UI/UX & Branding:** Responsive design (mobile to desktop sidebar), SVG icon replacement, Tailwind CSS for styling.
--   **Debugging:** Troubleshooting PostgreSQL connectivity, Next.js hydration issues, and API errors.
--   **Data Handling:** Mocking API responses for database-dependent features.
+-   **Full-stack Development:** Next.js (React) frontend, PostgreSQL database, Prisma ORM.
+-   **Environment & Process Management:** Supervisor for service control,  for packages.
+-   **UI/UX & Styling:** Responsive design, Tailwind CSS, DaisyUI, SVG icons.
+-   **Debugging:** PostgreSQL setup, Next.js cross-origin issues, API errors, component state.
+-   **Data Handling:** Mocking API responses.
 </key_technical_concepts>
 
 <code_architecture>
-The application uses a full-stack architecture with Next.js (React) frontend and a PostgreSQL database managed by Prisma. It adheres to Feature-Sliced Design.
+The application uses a full-stack Next.js (React) frontend with a PostgreSQL database, adhering to Feature-Sliced Design.
 
 
-
--   : **Summary**: Environment variables. **Changes**: Updated  for PostgreSQL;  reverted from localhost back to production URL after debugging.
--   : **Summary**: Supervisor configuration for process management. **Changes**: Removed  line which caused startup issues. Updated PostgreSQL command path and ensured correct service setup.
--   : **Summary**: Provides backend URL. **Changes**: Modified to remove hardcoded localhost and consistently use environment variables.
--   : **Summary**: Global CSS styles. **Changes**: Removed external font imports (), removed complex background image gradients and replaced with solid colors ( for light,  for dark), and later removed  classes from body to use default DaisyUI background.
--   : **Summary**: Main application layout. **Changes**: Removed font imports and declarations (,  classes removed from ), removed  classes from the  element.
--   : **Summary**: Tailwind CSS configuration. **Changes**: Updated font families to use system defaults instead of custom fonts.
--   , , : **Summary**: Core authentication logic and user session hooks. **Changes**: Mocked to return  or empty data to disable auth features.
--   : **Summary**: Premium status hook. **Changes**: Mocked to return  to disable premium checks.
--   : **Summary**: Main application header. **Changes**: Modified to simplify UI elements, remove auth-related components, and display Demo Mode instead of user info.
--   : **Summary**: Displays workout streak. **Changes**: Simplified to show a demo pattern, reducing API calls.
--   : **Summary**: Synchronizes workout sessions. **Changes**: Modified to return  to disable session synchronization.
--   : **Summary**: Synchronizes favorite exercises. **Changes**: Modified to return  to disable synchronization.
--   : **Summary**: Server action to fetch exercises from the database. **Changes**: Mocked to return static demo exercise data instead of making Prisma database queries.
--   : **Summary**: The main component for the workout creation workflow (equipment, muscle, exercise selection). **Changes**: Restructured the layout to move  (progress bar) and  (CTA buttons) *outside* the main card content. Added  to the footer for persistent visibility. Removed the outer  container, replacing it with a React Fragment ().
--   : **Summary**: Contains the Previous/Continue CTA buttons. **Changes**: Changed  to  (and  to ) for the Continue button background. Removed internal sticky positioning.
-
+-   : Manages service processes. **Changes**: The  line was initially causing startup issues, was removed (as per prior work), but then briefly re-introduced and subsequently re-removed during this trajectory to resolve PostgreSQL  errors.
+-   : Next.js configuration. **Changes**: Updated  to include preview domains () to resolve cross-origin request blocking errors observed during debugging.
+-   : Global CSS styles. **Changes**: Initially updated for solid backgrounds. During dark mode removal, all  classes, dark theme variables, and related styles were completely removed to enforce a light-only theme.
+-   : Main app layout. **Changes**: Removed font imports and  classes. During dark mode removal,  was hardcoded to , and all dark mode specific classes were eliminated. Similar changes applied to , , and .
+-   : Tailwind CSS config. **Changes**: Updated font families. For dark mode removal,  was removed, dark theme colors were purged, and DaisyUI configured to use only the  theme.
+-   : Application header. **Changes**: Simplified UI. **Recent Changes**: Added a styled Premium button to the  section with a golden gradient and crown icon. Dark mode classes were removed.
+-   : Server action for exercises. **Changes**: Mocked to return static demo data; however, logs indicated it still attempted live DB queries, leading to errors.
+-   : Main workout creation flow. **Changes**: Layout was restructured to move  and  outside the main content card, and the outer  container replaced with a fragment. Dark mode classes were removed. A temporary fix involved forcing  to .
+-   : Contains CTA buttons. **Changes**: Continue button background changed to . Dark mode classes removed.
+-   : Handles responsive navigation. **Changes**: The Premium navigation item was removed from the  array. All dark mode classes were removed. Sidebar item contrast was improved (darker text, more visible hover backgrounds).
+-   : Synchronizes theme. **Changes**: Simplified to explicitly set  as the theme color and remove dark mode logic.
+-   : Theme toggle component. **Changes**: Completely removed.
+-   : Generic UI card component. **Changes**: Dark mode styles were removed.
+-   : Main application providers. **Changes**:  was updated to  and  to disable system theme detection.
+-   , , , , , : Various UI components. All had specific  classes and associated styles removed to comply with the light-only theme.
 </code_architecture>
 
 <pending_tasks>
--   **Fix Equipment Selection Issue:** The Continue button on the equipment selection step remains disabled, preventing progression to the muscle and exercise selection steps, despite the exercise data being mocked. The user was offered options to fix or skip this, but subsequent requests shifted to styling. This remains an unresolved functional issue for the demo workflow.
+-   **Fix Equipment Selection Issue:** The Continue button on the equipment selection step remains disabled, preventing progression through the demo workflow. This is due to issues with the mocked exercise data not being properly consumed or the equipment selection logic not correctly updating the state to enable the button.
 </pending_tasks>
 
 <current_work>
-The immediate preceding work focused on refining the layout and styling of the Workout Builder feature to align with explicit user requests. Initially, the AI engineer addressed a user's request to completely remove the application's background, replacing custom  and  classes from the  element in  to utilize the default DaisyUI background colors ( and ).
+Immediately prior to this summary, the AI engineer successfully completed two major UI/UX enhancements. Firstly, dark mode functionality was entirely removed from the MuscleMap application. This involved systematically stripping all  utility classes, dark theme configurations from , and associated CSS variables from . Key components like the main , , , and all workout builder UI elements (e.g., , ) were updated to consistently enforce a light theme with white or very light gray backgrounds and dark text. The  component was removed, and theme providers (, ) were configured for light-only.
 
-Following this, the user requested a significant restructure of the workout builder's UI:
-1.  **Remove progress bar and CTA from card:** The  component was modified (in ) to move  (progress bar) and  (CTA buttons) out of the central content card, making them independent elements.
-2.  **CTAs sticky:** The  was updated to ensure the CTA buttons (Previous/Continue) remain visible at all times, implementing a  positioning for the footer.
-3.  **Color change for CTAs:** The dark blue background of the Continue button in  was changed from  to  (light black) with corresponding hover states ().
-4.  **Remove card container background/border:** The wrapper element around the equipment cards (and subsequently muscle/exercise cards) that previously had a background and border was removed to create a cleaner, borderless appearance.
-5.  **Remove outer container:** Finally, the overarching  container () wrapping the entire stepper was removed from , replacing it with a React Fragment (). This made the progress bar, content, and CTA buttons completely independent elements, maximizing layout flexibility.
-
-All these styling changes were verified through screenshots, confirming the successful implementation of a clean, no-scroll interface with independent, consistently styled elements.
+Secondly, the Premium feature's presentation was overhauled. The 'Premium' item was removed from the sidebar navigation by modifying . Instead, a visually prominent, golden-gradient Premium button with a crown icon was added to the top-left section of the navbar in , featuring bold text and hover effects. Concurrently, the contrast of inactive sidebar items was significantly improved, changing  to  and enhancing hover states for better visibility in  and . Both these changes were visually confirmed as implemented.
 </current_work>
 
 <optional_next_step>
-The next step is to fix the equipment selection issue in the  so the Continue button is enabled, allowing progression through the demo workflow.
+Address the unresolved Fix Equipment Selection Issue to enable the Continue button and progress the workout builder demo.
 </optional_next_step>
