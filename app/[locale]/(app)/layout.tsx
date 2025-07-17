@@ -22,7 +22,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         {/* Desktop layout - full-width with sidebar */}
         <div className="hidden lg:block">
           {/* Desktop Header - full width */}
-          <div className="fixed top-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#232324]/95 backdrop-blur-xl border-b border-[#4F8EF7]/15/50">
+          <div className="fixed top-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#232324]/95 backdrop-blur-xl border-b border-[#4F8EF7]/15 dark:border-slate-700/50">
             <div className="pl-64 pr-6 py-4">
               <Header />
             </div>
