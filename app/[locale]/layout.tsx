@@ -271,7 +271,7 @@ export default async function RootLayout({ params, children }: RootLayoutProps) 
 
         <body
           className={cn(
-            "flex items-center justify-center min-h-screen w-full max-sm:p-0 max-sm:min-h-full bg-base-200 dark:bg-[#18181b] dark:text-gray-200 antialiased",
+            "flex items-center justify-center min-h-screen w-full max-sm:p-0 max-sm:min-h-full bg-white text-gray-900 antialiased",
             "font-sans",
           )}
           suppressHydrationWarning
