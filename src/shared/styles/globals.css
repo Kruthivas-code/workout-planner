@@ -279,11 +279,7 @@ code {
 }
 
 .bg-hero-light {
-  background-color: #f3f4f6; /* Light grey */
-}
-
-.bg-hero-dark {
-  background-color: #232324; /* Dark black */
+  background-color: #f8f9fa; /* Very light gray */
 }
 
 @keyframes fade-in-up {
