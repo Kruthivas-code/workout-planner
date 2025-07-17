@@ -20,7 +20,6 @@ export const Header = () => {
       <div className="navbar-end">
         <WorkoutStreakHeader />
         <ReleaseNotesDialog />
-        <ThemeToggle />
         <LanguageSelector />
 
         <div className="dropdown dropdown-end ml-1">
