@@ -18,7 +18,6 @@ import { env } from "@/env";
 import { Button } from "@/components/ui/button";
 import { HorizontalTopBanner } from "@/components/ads";
 
-import { StepperStepProps } from "../types";
 import { useWorkoutStepper } from "../hooks/use-workout-stepper";
 import { useWorkoutSession } from "../../workout-session/model/use-workout-session";
 import { MuscleSelection } from "./muscle-selection";
