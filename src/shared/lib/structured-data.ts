@@ -375,7 +375,7 @@ export function generateStructuredData({
         thumbnailUrl: sessionData.thumbnailUrl || image || `${baseUrl}/images/default-workout.jpg`,
         contentUrl: sessionData.videoUrl,
         duration: `PT${sessionData.duration}M`,
-        uploadDate: new Date().toISOString(),
+        uploadDate: "2024-01-01T00:00:00.000Z",
         publisher: {
           "@type": "Organization",
           name: SiteConfig.company.name,
