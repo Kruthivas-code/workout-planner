@@ -4,7 +4,6 @@ import { User } from "lucide-react";
 
 import { useI18n } from "locales/client";
 import { LanguageSelector } from "@/widgets/language-selector/language-selector";
-import { ThemeToggle } from "@/features/theme/ThemeToggle";
 import { ReleaseNotesDialog } from "@/features/release-notes";
 import WorkoutStreakHeader from "@/features/layout/workout-streak-header";
 
