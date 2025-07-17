@@ -245,8 +245,8 @@ export function generateStructuredData({
             height: 512,
           },
         },
-        datePublished: datePublished || new Date().toISOString(),
-        dateModified: dateModified || new Date().toISOString(),
+        datePublished: datePublished || "2024-01-01T00:00:00.000Z",
+        dateModified: dateModified || "2024-01-01T00:00:00.000Z",
         image: image || `${baseUrl}/images/default-og-image_${locale}.jpg`,
         mainEntityOfPage: {
           "@type": "WebPage",
