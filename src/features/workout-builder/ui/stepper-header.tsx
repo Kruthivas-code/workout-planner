@@ -156,7 +156,7 @@ export function StepperHeader({ steps, currentStep, onStepClick }: StepperHeader
                 <div
                   className={cn(
                     "w-full h-1 transition-colors duration-300",
-                    step.isCompleted ? "bg-green-500" : "bg-gray-300 dark:bg-gray-600",
+                    step.isCompleted ? "bg-green-500" : "bg-gray-300",
                   )}
                 />
               </div>
