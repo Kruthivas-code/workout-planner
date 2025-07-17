@@ -53,7 +53,7 @@ export const ExerciseListItem = React.memo(function ExerciseListItem({
 
   return (
     <div
-      className={`flex items-center gap-3 p-3 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 select-none ${isDragging ? "shadow-lg" : ""}`}
+      className={`flex items-center gap-3 p-3 bg-white border-b border-slate-200 select-none ${isDragging ? "shadow-lg" : ""}`}
       ref={setNodeRef}
       style={{
         transform: CSS.Transform.toString(transform),
