@@ -283,18 +283,29 @@ export function WorkoutStepper() {
         <HorizontalTopBanner adSlot={env.NEXT_PUBLIC_TOP_STEPPER_STEP_3_BANNER_AD_SLOT} />
       )}
 
-      <StepperHeader currentStep={currentStep} onStepClick={handleStepClick} steps={steps} />
+      {/* Progress bar moved outside and above card */}
+      <div className="px-2 sm:px-6 mb-6">
+        <StepperHeader currentStep={currentStep} onStepClick={handleStepClick} steps={steps} />
+      </div>
 
-      <div className="px-2 sm:px-6">{renderStepContent()}</div>
+      {/* Card containing only the step content */}
+      <div className="px-2 sm:px-6 mb-6">
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+          {renderStepContent()}
+        </div>
+      </div>
 
-      <WorkoutBuilderFooter
-        canContinue={canContinue}
-        currentStep={currentStep}
-        onNext={nextStep}
-        onPrevious={prevStep}
-        onStartWorkout={handleStartWorkout}
-        totalSteps={STEPPER_STEPS.length}
-      />
+      {/* CTA buttons moved outside and below card */}
+      <div className="px-2 sm:px-6">
+        <WorkoutBuilderFooter
+          canContinue={canContinue}
+          currentStep={currentStep}
+          onNext={nextStep}
+          onPrevious={prevStep}
+          onStartWorkout={handleStartWorkout}
+          totalSteps={STEPPER_STEPS.length}
+        />
+      </div>
 
       <AddExerciseModal isOpen={addExerciseModal.value} onClose={addExerciseModal.setFalse} selectedEquipment={selectedEquipment} />
     </div>
