@@ -130,7 +130,7 @@ export function ResponsiveNavigation() {
                           ? "bg-gradient-to-br from-[#4F8EF7] to-[#25CB78] text-white scale-110"
                           : isPremium
                             ? "text-[#FFD93D] dark:text-[#FFD93D] group-hover:text-[#FFA500] dark:group-hover:text-[#FFA500]"
-                            : "text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300",
+                            : "text-gray-700 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-300",
                     )}
                   >
                     <IconComponent size={isActive ? 18 : 16} strokeWidth={isActive ? 2.5 : 2} />
