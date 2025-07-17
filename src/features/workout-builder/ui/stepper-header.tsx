@@ -41,7 +41,7 @@ function StepperStep({
             {
               "border-green-500 bg-green-500 text-white": isCompleted,
               "border-blue-500 bg-blue-500 text-white": isActive,
-              "border-gray-300 bg-gray-100 text-gray-400 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-500":
+              "border-gray-300 bg-gray-100 text-gray-400":
                 !isActive && !isCompleted,
             },
             canClick ? "cursor-pointer" : "cursor-default",
