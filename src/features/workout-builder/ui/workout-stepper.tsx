@@ -21,7 +21,6 @@ import { HorizontalTopBanner } from "@/components/ads";
 import { StepperStepProps } from "../types";
 import { useWorkoutStepper } from "../hooks/use-workout-stepper";
 import { useWorkoutSession } from "../../workout-session/model/use-workout-session";
-import { StepperHeader } from "./stepper-header";
 import { MuscleSelection } from "./muscle-selection";
 import { ExercisesSelection } from "./exercises-selection";
 import { EquipmentSelection } from "./equipment-selection";
