@@ -214,8 +214,8 @@ export function ResponsiveNavigation() {
                       : isActive
                         ? "bg-gradient-to-br from-[#4F8EF7]/8 to-[#25CB78]/8 border border-[#4F8EF7]/20"
                         : isPremium
-                          ? "hover:bg-[#FFD93D]/5 dark:hover:bg-[#FFD93D]/10"
-                          : "hover:bg-gray-50/80 dark:hover:bg-slate-800/50",
+                          ? "hover:bg-[#FFD93D]/5"
+                          : "hover:bg-gray-50/80",
                   )}
                   href={tab.href}
                   key={tab.id}
