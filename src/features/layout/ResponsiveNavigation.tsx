@@ -80,7 +80,7 @@ export function ResponsiveNavigation() {
             <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-[#4F8EF7] to-[#25CB78] rounded-lg">
               <Dumbbell size={18} className="text-white" strokeWidth={2.5} />
             </div>
-            <span className="text-xl font-bold text-gray-800 dark:text-gray-200">MuscleMap</span>
+            <span className="text-xl font-bold text-gray-800">MuscleMap</span>
           </div>
         </div>
 
