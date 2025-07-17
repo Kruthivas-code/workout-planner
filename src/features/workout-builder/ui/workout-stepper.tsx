@@ -300,7 +300,7 @@ export function WorkoutStepper() {
       </div>
 
       {/* CTA buttons - completely independent, sticky at bottom */}
-      <div className="px-2 sm:px-6 sticky bottom-0 bg-base-200 dark:bg-[#18181b] pt-4">
+      <div className="px-2 sm:px-6 sticky bottom-0 bg-white pt-4">
         <WorkoutBuilderFooter
           canContinue={canContinue}
           currentStep={currentStep}
