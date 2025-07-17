@@ -56,12 +56,14 @@ export const useWorkoutBuilderStore = create<WorkoutBuilderState>((set, get) => 
   nextStep: () => set((state) => ({ currentStep: Math.min(state.currentStep + 1, 3) as WorkoutBuilderStep })),
   prevStep: () => set((state) => ({ currentStep: Math.max(state.currentStep - 1, 1) as WorkoutBuilderStep })),
 
-  toggleEquipment: (equipment) =>
+  toggleEquipment: (equipment) => {
+    console.log("Store toggleEquipment called with:", equipment);
     set((state) => ({
       selectedEquipment: state.selectedEquipment.includes(equipment)
         ? state.selectedEquipment.filter((e) => e !== equipment)
         : [...state.selectedEquipment, equipment],
-    })),
+    }));
+  },
   clearEquipment: () => set({ selectedEquipment: [] }),
 
   toggleMuscle: (muscle) =>
