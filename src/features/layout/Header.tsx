@@ -44,7 +44,7 @@ export const Header = () => {
         >
           <div className="relative flex-none">
             <Image
-              alt="workout cool logo"
+              alt="MuscleMap logo"
               className="h-10 w-10 sm:h-8 sm:w-8 transition-transform duration-200 group-hover:rotate-[20deg] group-hover:scale-110"
               height={32}
               priority
