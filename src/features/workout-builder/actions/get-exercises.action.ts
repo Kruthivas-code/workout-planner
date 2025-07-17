@@ -89,7 +89,7 @@ const DEMO_EXERCISES = [
       },
       {
         attributeName: { name: ExerciseAttributeNameEnum.EQUIPMENT },
-        attributeValue: { value: "KETTLEBELL" }
+        attributeValue: { value: "KETTLEBELLS" }
       }
     ]
   },
