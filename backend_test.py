@@ -531,6 +531,9 @@ class WorkoutBuilderTester:
         print("=" * 60)
         
         # Run all test methods
+        self.test_database_connectivity()
+        self.test_server_action_structure()
+        self.test_prisma_schema_enums()
         self.test_equipment_enum_values()
         self.test_get_exercises_action_mock_data()
         self.test_equipment_selection_workflow()
