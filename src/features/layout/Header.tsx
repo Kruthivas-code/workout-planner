@@ -12,7 +12,7 @@ export const Header = () => {
   const t = useI18n();
 
   return (
-    <div className="navbar bg-base-100 dark:bg-black dark:text-gray-200 px-2 sm:px-4 rounded-tl-lg rounded-tr-lg">
+    <div className="navbar bg-white px-2 sm:px-4 rounded-tl-lg rounded-tr-lg border-b border-gray-200">
       {/* Empty start section */}
       <div className="navbar-start"></div>
 
