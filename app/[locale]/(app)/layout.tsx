@@ -12,7 +12,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       {/* Main app container with responsive layout */}
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-gray-50">
         {/* Mobile layout - original card-based design */}
         <div className="lg:hidden card w-full max-w-3xl min-h-[500px] max-h-[90vh] bg-white dark:bg-[#232324] shadow-xl border border-base-200 dark:border-slate-700 flex flex-col justify-between overflow-hidden max-sm:rounded-none max-sm:h-full rounded-lg mx-auto">
           <Header />
