@@ -272,7 +272,7 @@ export function WorkoutStepper() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto h-full flex flex-col">
+    <>
       {currentStep === 1 && env.NEXT_PUBLIC_TOP_STEPPER_STEP_1_BANNER_AD_SLOT && (
         <HorizontalTopBanner adSlot={env.NEXT_PUBLIC_TOP_STEPPER_STEP_1_BANNER_AD_SLOT} />
       )}
@@ -283,18 +283,18 @@ export function WorkoutStepper() {
         <HorizontalTopBanner adSlot={env.NEXT_PUBLIC_TOP_STEPPER_STEP_3_BANNER_AD_SLOT} />
       )}
 
-      {/* Progress bar moved outside and above */}
-      <div className="px-2 sm:px-6 mb-6 flex-shrink-0">
+      {/* Progress bar - completely independent */}
+      <div className="px-2 sm:px-6 mb-6">
         <StepperHeader currentStep={currentStep} onStepClick={handleStepClick} steps={steps} />
       </div>
 
-      {/* Content area - no card container, just the content */}
+      {/* Content area - completely independent */}
       <div className="px-2 sm:px-6 flex-1 overflow-y-auto">
         {renderStepContent()}
       </div>
 
-      {/* CTA buttons - sticky at bottom */}
-      <div className="px-2 sm:px-6 flex-shrink-0 sticky bottom-0 bg-base-200 dark:bg-[#18181b] pt-4">
+      {/* CTA buttons - completely independent, sticky at bottom */}
+      <div className="px-2 sm:px-6 sticky bottom-0 bg-base-200 dark:bg-[#18181b] pt-4">
         <WorkoutBuilderFooter
           canContinue={canContinue}
           currentStep={currentStep}
@@ -306,6 +306,6 @@ export function WorkoutStepper() {
       </div>
 
       <AddExerciseModal isOpen={addExerciseModal.value} onClose={addExerciseModal.setFalse} selectedEquipment={selectedEquipment} />
-    </div>
+    </>
   );
 }
