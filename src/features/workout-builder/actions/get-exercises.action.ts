@@ -38,7 +38,7 @@ const DEMO_EXERCISES = [
       },
       {
         attributeName: { name: ExerciseAttributeNameEnum.EQUIPMENT },
-        attributeValue: { value: "BODYWEIGHT" }
+        attributeValue: { value: "BODY_ONLY" }
       }
     ]
   },
