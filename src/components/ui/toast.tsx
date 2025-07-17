@@ -141,7 +141,7 @@ const BrandedToastContent = ({ title, subtitle, variant = "default" }: BrandedTo
   return (
     <ToastDescription className={"dark:bg-black-dark dark:text-white"}>
       <div className={`-mt-0.5 flex items-center gap-2 border-b px-4 py-3 ${color}`}>
-        <Image alt="logo" height={24} src={Logo} width={24} />
+        <LogoSvg size={24} className="text-primary" />
       </div>
       <div className="flex items-center p-4">
         {icon}
