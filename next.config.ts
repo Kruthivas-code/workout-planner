@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    allowedDevOrigins: [
+      "c3af22fa-76c4-45c5-a001-c3b04f32c991.preview.emergentagent.com",
+      "workout-buddy-56.preview.emergentagent.com",
+    ],
+  },
 };
 
 export default nextConfig;
