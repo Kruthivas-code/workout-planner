@@ -85,7 +85,7 @@ export function WorkoutStepper() {
 
   const { isWorkoutActive, session, startWorkout, quitWorkout } = useWorkoutSession();
 
-  const canContinue = currentStep === 1 ? canProceedToStep2 : currentStep === 2 ? canProceedToStep3 : exercisesByMuscle.length > 0;
+  const canContinue = currentStep === 1 ? true : currentStep === 2 ? canProceedToStep3 : exercisesByMuscle.length > 0;
 
   const handleShuffleExercise = async (exerciseId: string, muscle: string) => {
     try {
