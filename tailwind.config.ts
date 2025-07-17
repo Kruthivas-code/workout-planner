@@ -68,7 +68,6 @@ const config: Config = {
       colors: {
         popover: {
           DEFAULT: "#FFF",
-          dark: "#232324",
           foreground: "#000",
         },
         transparent: "transparent",
