@@ -106,7 +106,7 @@ function StepperStep({
           <p
             className={cn(
               "text-xs mt-1 transition-colors",
-              isActive || isCompleted ? "text-gray-600 dark:text-gray-300" : "text-gray-400 dark:text-gray-500",
+              isActive || isCompleted ? "text-gray-600" : "text-gray-400",
             )}
           >
             {description}
