@@ -14,10 +14,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       {/* Main app container with responsive layout */}
       <div className="min-h-screen bg-gray-50">
         {/* Mobile layout - full-width gray background with centered content */}
-        <div className="lg:hidden bg-gray-50 min-h-screen">
-          <div className="card w-full max-w-3xl min-h-[500px] max-h-[90vh] bg-white shadow-xl border border-base-200 flex flex-col justify-between overflow-hidden max-sm:rounded-none max-sm:h-full rounded-lg mx-auto">
+        <div className="lg:hidden bg-gray-50 min-h-screen flex items-center justify-center p-4">
+          <div className="card w-full max-w-3xl bg-white shadow-xl border border-base-200 flex flex-col overflow-hidden max-sm:rounded-none rounded-lg">
             <Header />
-            <div className="flex-1 overflow-auto flex flex-col">{children}</div>
+            <div className="flex-1 flex flex-col">{children}</div>
           </div>
         </div>
 
@@ -30,11 +30,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             </div>
           </div>
 
-          {/* Main content area - full width gray background */}
-          <div className="pl-64 pt-20 min-h-screen bg-gray-50">
-            <div className="p-6 max-w-7xl mx-auto">
-              <div className="bg-white rounded-2xl shadow-xl border border-base-200 min-h-[calc(100vh-6rem)] overflow-hidden">
-                <div className="p-6 h-full">
+          {/* Main content area - full width gray background with centered card */}
+          <div className="pl-64 pt-20 min-h-screen bg-gray-50 flex items-center justify-center p-6">
+            <div className="w-full max-w-7xl">
+              <div className="bg-white rounded-2xl shadow-xl border border-base-200 overflow-hidden">
+                <div className="p-6">
                   {children}
                 </div>
               </div>
