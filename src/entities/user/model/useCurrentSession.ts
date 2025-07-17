@@ -1,12 +1,4 @@
-import { useSession } from "@/features/auth/lib/auth-client";
-
+// Mock version for demo mode - no auth
 export const useCurrentSession = () => {
-  const session = useSession();
-  const sessionData = session.data;
-
-  if (!sessionData) {
-    return null;
-  }
-
-  return sessionData;
+  return null;
 };
