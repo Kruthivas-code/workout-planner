@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import { Header } from "@/features/layout/Header";
 import { Footer } from "@/features/layout/Footer";
-import { BottomNavigation } from "@/features/layout/BottomNavigation";
+import { ResponsiveNavigation } from "@/features/layout/ResponsiveNavigation";
 
 interface RootLayoutProps {
   params: Promise<{ locale: string }>;
@@ -11,11 +11,47 @@ interface RootLayoutProps {
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div className="card w-full max-w-3xl min-h-[500px] max-h-[90vh] bg-white dark:bg-[#232324] shadow-xl border border-base-200 dark:border-slate-700 flex flex-col justify-between overflow-hidden max-sm:rounded-none max-sm:h-full rounded-lg">
-      <Header />
-      <div className="flex-1 overflow-auto flex flex-col">{children}</div>
-      <BottomNavigation />
-      <Footer />
-    </div>
+    <>
+      {/* Main app container with responsive layout */}
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        {/* Mobile layout - original card-based design */}
+        <div className="lg:hidden card w-full max-w-3xl min-h-[500px] max-h-[90vh] bg-white dark:bg-[#232324] shadow-xl border border-base-200 dark:border-slate-700 flex flex-col justify-between overflow-hidden max-sm:rounded-none max-sm:h-full rounded-lg mx-auto">
+          <Header />
+          <div className="flex-1 overflow-auto flex flex-col">{children}</div>
+          <Footer />
+        </div>
+
+        {/* Desktop layout - full-width with sidebar */}
+        <div className="hidden lg:block">
+          {/* Desktop Header - full width */}
+          <div className="fixed top-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#232324]/95 backdrop-blur-xl border-b border-[#4F8EF7]/15 dark:border-slate-700/50">
+            <div className="pl-64 pr-6 py-4">
+              <Header />
+            </div>
+          </div>
+
+          {/* Main content area - offset by sidebar width */}
+          <div className="pl-64 pt-20 min-h-screen">
+            <div className="p-6 max-w-7xl mx-auto">
+              <div className="bg-white dark:bg-[#232324] rounded-2xl shadow-xl border border-base-200 dark:border-slate-700 min-h-[calc(100vh-8rem)] overflow-hidden">
+                <div className="p-6 h-full">
+                  {children}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Footer - full width */}
+          <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#232324]/95 backdrop-blur-xl border-t border-[#4F8EF7]/15 dark:border-slate-700/50">
+            <div className="pl-64 pr-6 py-2">
+              <Footer />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Responsive Navigation - handles both mobile bottom nav and desktop sidebar */}
+      <ResponsiveNavigation />
+    </>
   );
 }
