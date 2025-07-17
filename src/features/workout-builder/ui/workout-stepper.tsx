@@ -181,12 +181,6 @@ export function WorkoutStepper() {
     if (fromSession) setFromSession(null);
   };
 
-  const handleStepClick = (stepNumber: number) => {
-    if (stepNumber < currentStep) {
-      goToStep(stepNumber as WorkoutBuilderStep);
-    }
-  };
-
   if (showCongrats && !isWorkoutActive) {
     return (
       <>
