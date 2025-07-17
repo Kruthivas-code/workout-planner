@@ -184,5 +184,9 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography"), require("daisyui")],
+  daisyui: {
+    themes: ["light"], // Only use light theme
+    darkTheme: false, // Disable dark theme
+  },
 };
 export default config;
