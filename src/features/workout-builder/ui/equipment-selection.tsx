@@ -40,20 +40,20 @@ function EquipmentCard({ equipment, isSelected, onToggle }: EquipmentCardProps) 
       className={cn(
         // Base styles - Chess.com inspiration
         "group relative overflow-hidden cursor-pointer",
-        "bg-gradient-to-br from-slate-50 to-slate-200 dark:from-slate-800 dark:to-slate-900",
-        "border-2 border-slate-200 dark:border-slate-700",
+        "bg-gradient-to-br from-slate-50 to-slate-200",
+        "border-2 border-slate-200",
         "rounded-xl shadow-sm hover:shadow-xl",
         // Transitions smooth
         "transition-all duration-300 ease-out",
         "hover:scale-[1.02] hover:-translate-y-1",
         // Selected state
         isSelected && [
-          "border-emerald-400 dark:border-emerald-500",
-          "bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20",
-          "shadow-emerald-200/50 dark:shadow-emerald-900/50 shadow-lg",
+          "border-emerald-400",
+          "bg-gradient-to-br from-emerald-50 to-emerald-100",
+          "shadow-emerald-200/50 shadow-lg",
         ],
         // Hover effects
-        !isSelected && "hover:border-slate-300 dark:hover:border-slate-600",
+        !isSelected && "hover:border-slate-300",
       )}
       onClick={handleClick}
     >
