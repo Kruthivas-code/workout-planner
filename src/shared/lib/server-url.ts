@@ -8,6 +8,11 @@ export const getServerUrl = () => {
     return window.location.origin;
   }
 
+  // Use NEXT_PUBLIC_APP_URL if available (for non-Vercel deployments)
+  if (process.env.NEXT_PUBLIC_APP_URL) {
+    return process.env.NEXT_PUBLIC_APP_URL;
+  }
+
   // If we are in production, we return the production URL.
   if (process.env.VERCEL_ENV === "production") {
     return SiteConfig.prodUrl;
