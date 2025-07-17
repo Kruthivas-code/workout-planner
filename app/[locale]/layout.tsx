@@ -198,19 +198,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const permanentMarker = Permanent_Marker({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-permanent-marker",
-  display: "swap",
-});
-
 export const preferredRegion = ["fra1", "sfo1", "iad1"];
 
 interface RootLayoutProps {
