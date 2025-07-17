@@ -265,7 +265,7 @@ export function WorkoutStepper() {
           onNext={nextStep}
           onPrevious={prevStep}
           onStartWorkout={handleStartWorkout}
-          totalSteps={STEPPER_STEPS.length}
+          totalSteps={3}
         />
       </div>
 
