@@ -34,7 +34,7 @@ const DEMO_EXERCISES = [
     attributes: [
       {
         attributeName: { name: ExerciseAttributeNameEnum.PRIMARY_MUSCLE },
-        attributeValue: { value: "QUADS" }
+        attributeValue: { value: "QUADRICEPS" }
       },
       {
         attributeName: { name: ExerciseAttributeNameEnum.EQUIPMENT },
