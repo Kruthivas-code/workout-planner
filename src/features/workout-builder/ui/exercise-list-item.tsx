@@ -102,7 +102,7 @@ export const ExerciseListItem = React.memo(function ExerciseListItem({
       </div>
 
       <div className="flex-1 min-w-0">
-        <span className="text-sm font-medium text-slate-900 dark:text-slate-100 md:truncate">{exerciseName}</span>
+        <span className="text-sm font-medium text-slate-900 md:truncate">{exerciseName}</span>
       </div>
 
       <Button
