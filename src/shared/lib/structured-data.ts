@@ -695,27 +695,13 @@ export function generateStructuredData({
 }
 
 export function StructuredDataScript({ data }: { data: object }) {
-  const [isClient, setIsClient] = useState(false);
-  
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-  
-  // Only render after hydration to prevent hydration mismatch
-  if (!isClient) {
-    return React.createElement("script", {
-      type: "application/ld+json",
-      suppressHydrationWarning: true,
-      dangerouslySetInnerHTML: {
-        __html: JSON.stringify(data),
-      },
-    });
-  }
-  
-  return React.createElement("script", {
-    type: "application/ld+json",
-    dangerouslySetInnerHTML: {
-      __html: JSON.stringify(data),
-    },
-  });
+  return (
+    <script
+      type="application/ld+json"
+      suppressHydrationWarning={true}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data, null, 0),
+      }}
+    />
+  );
 }
