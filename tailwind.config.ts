@@ -22,8 +22,8 @@ const config: Config = {
       "2xl": "1472px",
     },
     fontFamily: {
-      sans: ["var(--font-sans)"],
-      "permanent-marker": ["var(--font-permanent-marker)"],
+      sans: ["system-ui", "sans-serif"],
+      "permanent-marker": ["system-ui", "sans-serif"],
     },
     extend: {
       backgroundImage: {
