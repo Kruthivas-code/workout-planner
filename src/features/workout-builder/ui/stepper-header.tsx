@@ -96,9 +96,9 @@ function StepperStep({
         <div className="mt-3">
           <h3
             className={cn("font-semibold text-sm transition-colors", {
-              "text-green-600 dark:text-green-400": isCompleted,
-              "text-blue-600 dark:text-blue-400": isActive,
-              "text-gray-500 dark:text-gray-400": !isActive && !isCompleted,
+              "text-green-600": isCompleted,
+              "text-blue-600": isActive,
+              "text-gray-500": !isActive && !isCompleted,
             })}
           >
             {title}
