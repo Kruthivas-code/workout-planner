@@ -61,7 +61,7 @@ function EquipmentCard({ equipment, isSelected, onToggle }: EquipmentCardProps) 
         <div
           className={cn(
             "absolute top-3 left-3 w-2 h-2 rounded-full transition-colors duration-200",
-            isSelected ? "bg-emerald-400" : "bg-slate-300 dark:bg-slate-600",
+            isSelected ? "bg-emerald-400" : "bg-slate-300",
           )}
         />
 
