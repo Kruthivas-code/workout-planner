@@ -1,19 +1,28 @@
 "use client";
 
-import { User } from "lucide-react";
+import { User, Crown } from "lucide-react";
+import Link from "next/link";
 
-import { useI18n } from "locales/client";
+import { useI18n, useCurrentLocale } from "locales/client";
 import { LanguageSelector } from "@/widgets/language-selector/language-selector";
 import { ReleaseNotesDialog } from "@/features/release-notes";
 import WorkoutStreakHeader from "@/features/layout/workout-streak-header";
 
 export const Header = () => {
   const t = useI18n();
+  const locale = useCurrentLocale();
 
   return (
     <div className="navbar bg-white px-2 sm:px-4 rounded-tl-lg rounded-tr-lg border-b border-gray-200">
-      {/* Empty start section */}
-      <div className="navbar-start"></div>
+      {/* Left side - Premium button */}
+      <div className="navbar-start">
+        <Link href={`/${locale}/premium`}>
+          <button className="btn btn-primary rounded-full font-bold text-sm px-4 py-2 min-h-[2.5rem] h-10 bg-gradient-to-r from-[#FFD93D] to-[#FFA500] hover:from-[#FFC107] hover:to-[#FF9800] border-none text-black shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-105">
+            <Crown className="w-4 h-4 mr-1" />
+            {t("bottom_navigation.premium")}
+          </button>
+        </Link>
+      </div>
 
       {/* User Menu */}
       <div className="navbar-end">
