@@ -1,7 +1,7 @@
 {
   "background_color": "#f3f4f6",
   "categories": ["health", "fitness", "sports"],
-  "description": "Your personal workout companion - track workouts, build routines, and stay motivated",
+  "description": "Your personal workout companion - track workouts, build routines, and stay motivated with muscle mapping",
   "display": "standalone",
   "icons": [
     {
@@ -34,10 +34,10 @@
     }
   ],
   "lang": "en",
-  "name": "Workout Cool",
+  "name": "MuscleMap",
   "orientation": "portrait",
   "scope": "/",
-  "short_name": "Workout Cool",
+  "short_name": "MuscleMap",
   "start_url": "/",
-  "theme_color": "#FF5722"
+  "theme_color": "#4F46E5"
 }
