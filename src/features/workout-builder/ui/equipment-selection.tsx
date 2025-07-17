@@ -30,6 +30,11 @@ function EquipmentCard({ equipment, isSelected, onToggle }: EquipmentCardProps) 
 
   const translation = getEquipmentTranslation(equipment.value, t);
 
+  const handleClick = () => {
+    console.log("Equipment card clicked:", equipment.value);
+    onToggle();
+  };
+
   return (
     <Card
       className={cn(
@@ -50,7 +55,7 @@ function EquipmentCard({ equipment, isSelected, onToggle }: EquipmentCardProps) 
         // Hover effects
         !isSelected && "hover:border-slate-300 dark:hover:border-slate-600",
       )}
-      onClick={onToggle}
+      onClick={handleClick}
     >
       <CardContent className="p-2 sm:p-4 h-auto flex flex-col justify-center items-center relative">
         <div
