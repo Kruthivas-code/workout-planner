@@ -185,8 +185,8 @@ export function ResponsiveNavigation() {
         </div>
 
         {/* Sidebar footer */}
-        <div className="p-4 border-t border-[#4F8EF7]/10 dark:border-slate-700/50">
-          <div className="text-xs text-gray-500 dark:text-gray-400 text-center">
+        <div className="p-4 border-t border-[#4F8EF7]/10">
+          <div className="text-xs text-gray-500 text-center">
             © 2025 MuscleMap
           </div>
         </div>
