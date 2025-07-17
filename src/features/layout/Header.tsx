@@ -43,13 +43,9 @@ export const Header = () => {
           href="/"
         >
           <div className="relative flex-none">
-            <Image
-              alt="MuscleMap logo"
-              className="h-10 w-10 sm:h-8 sm:w-8 transition-transform duration-200 group-hover:rotate-[20deg] group-hover:scale-110"
-              height={32}
-              priority
-              src={Logo}
-              width={32}
+            <LogoSvg 
+              size={32}
+              className="h-10 w-10 sm:h-8 sm:w-8 transition-transform duration-200 group-hover:rotate-[20deg] group-hover:scale-110 text-primary"
             />
             <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-emerald-400 opacity-0 transition-opacity duration-200 group-hover:opacity-100"></div>
           </div>
