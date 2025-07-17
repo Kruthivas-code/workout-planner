@@ -109,7 +109,7 @@ function EquipmentCard({ equipment, isSelected, onToggle }: EquipmentCardProps) 
         </div>
 
         {/* Progress bar subtile en bas */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-200 dark:bg-slate-700 overflow-hidden rounded-b-xl">
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-200 overflow-hidden rounded-b-xl">
           <div
             className={cn(
               "h-full transition-all duration-500 ease-out",
