@@ -103,8 +103,8 @@ export function ResponsiveNavigation() {
                     : isActive
                       ? "bg-gradient-to-r from-[#4F8EF7]/12 to-[#25CB78]/12 border border-[#4F8EF7]/20 shadow-lg shadow-[#4F8EF7]/10"
                       : isPremium
-                        ? "hover:bg-[#FFD93D]/8 dark:hover:bg-[#FFD93D]/15 hover:shadow-md"
-                        : "hover:bg-gray-50/80 dark:hover:bg-slate-800/50 hover:shadow-md",
+                        ? "hover:bg-[#FFD93D]/8 hover:shadow-md"
+                        : "hover:bg-gray-50/80 hover:shadow-md",
                 )}
               >
                 {/* Active left indicator */}
