@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: SessionDetailPageProps): Prom
       title: sessionMetadata.title,
       description: sessionMetadata.description,
       url: `https://www.workout.cool/${locale}/programs/${slug}/session/${sessionSlug}`,
-      siteName: "Workout Cool",
+      siteName: "MuscleMap",
       images: [
         {
           url: imageUrl,
