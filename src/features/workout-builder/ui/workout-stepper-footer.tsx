@@ -41,7 +41,7 @@ export function WorkoutBuilderFooter({
 
           {/* Next/Start Workout button */}
           <Button
-            className="flex-1 rounded-full bg-slate-800 hover:bg-slate-900 min-h-12 dark:bg-slate-700 dark:hover:bg-slate-600"
+            className="flex-1 rounded-full bg-slate-800 hover:bg-slate-900 min-h-12"
             disabled={!canContinue}
             onClick={isFinalStep ? () => onStartWorkout?.() : onNext}
             size="default"
