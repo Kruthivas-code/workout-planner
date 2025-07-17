@@ -1,0 +1,69 @@
+<analysis>
+The AI engineer's trajectory showcases a systematic approach to debugging and enhancing a Next.js application, MuscleMap. Initially, the focus was on resolving critical infrastructure issues: a PostgreSQL user configuration error that prevented supervisor services from starting, and subsequently fixing incorrect PostgreSQL paths. Following this, the engineer addressed a user-reported Error loading exercises issue, diagnosing it as a disconnected database and implementing a mock data solution to enable the feature for demonstration. The work then pivoted to significant UI/UX refinements, including fixing persistent font loading errors by switching to system fonts, and then extensively restructuring the layout of the workout builder. This involved making CTA buttons sticky, removing redundant card containers, and refining background colors, culminating in a clean, functional demo version with a focus on visual consistency and user experience.
+</analysis>
+
+<product_requirements>
+The application, originally Workout.cool, is an MVP fitness coaching platform built with Next.js, React, Prisma, PostgreSQL, and Tailwind CSS. The user tasked the AI engineer with several improvements and fixes:
+1.  **Fix Hydration Error:** Resolve front-end hydration issues stemming from dynamic structured data.
+2.  **Fix HTTP ERROR 502:** Address server crashes causing unresponsiveness.
+3.  **Rebrand Application:** Change the name to MuscleMap, update branding elements, and implement a bicep curl icon across the UI, configurations, and metadata.
+4.  **Responsive Layout Conversion:** Transition from a mobile-first UI to a responsive web application layout, specifically by moving the bottom navigation to a left sidebar on larger screens.
+5.  **Remove Top Bar Branding:** Eliminate the MuscleMap logo and text from the main header.
+6.  **Remove Bottom Bar:** Delete the footer containing social links and policy links.
+7.  **Fix Exercise Loading Issue:** Resolve Error loading exercises, ensuring database connectivity and data display.
+8.  **Remove Background Image:** Replace complex background gradients with solid colors (light grey:  for light mode, dark black:  for dark mode).
+9.  **Disable Auth Features:** Remove authentication-related components and API calls to simplify into a static/demo version.
+10. **Refine Workout Builder Layout:** Remove progress bar and CTA from inside the main card container, move them outside while maintaining position, and apply consistently across all steps (equipment, muscle, exercise selection). Ensure CTAs remain visible at all times (sticky), replace dark blue CTA background with light black, and remove background/border from the entire card container while retaining individual equipment card styling.
+</product_requirements>
+
+<key_technical_concepts>
+-   **Full-stack Development:** React (Next.js) frontend with Prisma ORM and PostgreSQL.
+-   **Environment/Process Management:** Supervisor for service control,  for package management.
+-   **UI/UX & Branding:** Responsive design (mobile to desktop sidebar), SVG icon replacement, Tailwind CSS for styling.
+-   **Debugging:** Troubleshooting PostgreSQL connectivity, Next.js hydration issues, and API errors.
+-   **Data Handling:** Mocking API responses for database-dependent features.
+</key_technical_concepts>
+
+<code_architecture>
+The application uses a full-stack architecture with Next.js (React) frontend and a PostgreSQL database managed by Prisma. It adheres to Feature-Sliced Design.
+
+
+
+-   : **Summary**: Environment variables. **Changes**: Updated  for PostgreSQL;  reverted from localhost back to production URL after debugging.
+-   : **Summary**: Supervisor configuration for process management. **Changes**: Removed  line which caused startup issues. Updated PostgreSQL command path and ensured correct service setup.
+-   : **Summary**: Provides backend URL. **Changes**: Modified to remove hardcoded localhost and consistently use environment variables.
+-   : **Summary**: Global CSS styles. **Changes**: Removed external font imports (), removed complex background image gradients and replaced with solid colors ( for light,  for dark), and later removed  classes from body to use default DaisyUI background.
+-   : **Summary**: Main application layout. **Changes**: Removed font imports and declarations (,  classes removed from ), removed  classes from the  element.
+-   : **Summary**: Tailwind CSS configuration. **Changes**: Updated font families to use system defaults instead of custom fonts.
+-   , , : **Summary**: Core authentication logic and user session hooks. **Changes**: Mocked to return  or empty data to disable auth features.
+-   : **Summary**: Premium status hook. **Changes**: Mocked to return  to disable premium checks.
+-   : **Summary**: Main application header. **Changes**: Modified to simplify UI elements, remove auth-related components, and display Demo Mode instead of user info.
+-   : **Summary**: Displays workout streak. **Changes**: Simplified to show a demo pattern, reducing API calls.
+-   : **Summary**: Synchronizes workout sessions. **Changes**: Modified to return  to disable session synchronization.
+-   : **Summary**: Synchronizes favorite exercises. **Changes**: Modified to return  to disable synchronization.
+-   : **Summary**: Server action to fetch exercises from the database. **Changes**: Mocked to return static demo exercise data instead of making Prisma database queries.
+-   : **Summary**: The main component for the workout creation workflow (equipment, muscle, exercise selection). **Changes**: Restructured the layout to move  (progress bar) and  (CTA buttons) *outside* the main card content. Added  to the footer for persistent visibility. Removed the outer  container, replacing it with a React Fragment ().
+-   : **Summary**: Contains the Previous/Continue CTA buttons. **Changes**: Changed  to  (and  to ) for the Continue button background. Removed internal sticky positioning.
+
+</code_architecture>
+
+<pending_tasks>
+-   **Fix Equipment Selection Issue:** The Continue button on the equipment selection step remains disabled, preventing progression to the muscle and exercise selection steps, despite the exercise data being mocked. The user was offered options to fix or skip this, but subsequent requests shifted to styling. This remains an unresolved functional issue for the demo workflow.
+</pending_tasks>
+
+<current_work>
+The immediate preceding work focused on refining the layout and styling of the Workout Builder feature to align with explicit user requests. Initially, the AI engineer addressed a user's request to completely remove the application's background, replacing custom  and  classes from the  element in  to utilize the default DaisyUI background colors ( and ).
+
+Following this, the user requested a significant restructure of the workout builder's UI:
+1.  **Remove progress bar and CTA from card:** The  component was modified (in ) to move  (progress bar) and  (CTA buttons) out of the central content card, making them independent elements.
+2.  **CTAs sticky:** The  was updated to ensure the CTA buttons (Previous/Continue) remain visible at all times, implementing a  positioning for the footer.
+3.  **Color change for CTAs:** The dark blue background of the Continue button in  was changed from  to  (light black) with corresponding hover states ().
+4.  **Remove card container background/border:** The wrapper element around the equipment cards (and subsequently muscle/exercise cards) that previously had a background and border was removed to create a cleaner, borderless appearance.
+5.  **Remove outer container:** Finally, the overarching  container () wrapping the entire stepper was removed from , replacing it with a React Fragment (). This made the progress bar, content, and CTA buttons completely independent elements, maximizing layout flexibility.
+
+All these styling changes were verified through screenshots, confirming the successful implementation of a clean, no-scroll interface with independent, consistently styled elements.
+</current_work>
+
+<optional_next_step>
+The next step is to fix the equipment selection issue in the  so the Continue button is enabled, allowing progression through the demo workflow.
+</optional_next_step>
