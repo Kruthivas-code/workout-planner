@@ -137,7 +137,7 @@ class WorkoutBuilderTester:
                 "BICEPS",
                 "TRICEPS",
                 "SHOULDERS",
-                "QUADS",
+                "QUADRICEPS",  # Note: Schema uses QUADRICEPS not QUADS
                 "HAMSTRINGS",
                 "GLUTES",
                 "CALVES"
