@@ -31,7 +31,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           {/* Main content area - offset by sidebar width */}
           <div className="pl-64 pt-20 min-h-screen">
             <div className="p-6 max-w-7xl mx-auto">
-              <div className="bg-white dark:bg-[#232324] rounded-2xl shadow-xl border border-base-200 min-h-[calc(100vh-6rem)] overflow-hidden">
+              <div className="bg-white dark:bg-[#232324] rounded-2xl shadow-xl border border-base-200 dark:border-slate-700 min-h-[calc(100vh-6rem)] overflow-hidden">
                 <div className="p-6 h-full">
                   {children}
                 </div>
