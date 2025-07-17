@@ -694,13 +694,11 @@ export function generateStructuredData({
 }
 
 export function StructuredDataScript({ data }: { data: object }) {
-  return (
-    <script
-      type="application/ld+json"
-      suppressHydrationWarning={true}
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(data, null, 0),
-      }}
-    />
-  );
+  return React.createElement("script", {
+    type: "application/ld+json",
+    suppressHydrationWarning: true,
+    dangerouslySetInnerHTML: {
+      __html: JSON.stringify(data, null, 0),
+    },
+  });
 }
