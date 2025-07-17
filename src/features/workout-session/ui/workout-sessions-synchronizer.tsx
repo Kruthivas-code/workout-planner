@@ -1,20 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-
-import { useSyncWorkoutSessions } from "../model/use-sync-workout-sessions";
-
+// Disabled in demo mode - no auth synchronization needed
 export const WorkoutSessionsSynchronizer = () => {
-  const { syncSessions } = useSyncWorkoutSessions();
-  const searchParams = useSearchParams();
-  const isSigninParam = searchParams.get("signin") === "true";
-
-  useEffect(() => {
-    if (isSigninParam) {
-      syncSessions();
-    }
-  }, [isSigninParam]);
-
   return null;
 };
