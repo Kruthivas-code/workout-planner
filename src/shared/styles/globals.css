@@ -132,10 +132,10 @@
 }
 
 .skeleton {
-  @apply animate-pulse bg-gray-200 dark:bg-gray-700;
+  @apply animate-pulse bg-gray-200;
 }
 
-.dark code {
+code {
   @apply text-black;
 }
 
