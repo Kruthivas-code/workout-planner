@@ -13,10 +13,12 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <>
       {/* Main app container with responsive layout */}
       <div className="min-h-screen bg-gray-50">
-        {/* Mobile layout - original card-based design */}
-        <div className="lg:hidden card w-full max-w-3xl min-h-[500px] max-h-[90vh] bg-white shadow-xl border border-base-200 flex flex-col justify-between overflow-hidden max-sm:rounded-none max-sm:h-full rounded-lg mx-auto">
-          <Header />
-          <div className="flex-1 overflow-auto flex flex-col">{children}</div>
+        {/* Mobile layout - full-width gray background with centered content */}
+        <div className="lg:hidden bg-gray-50 min-h-screen">
+          <div className="card w-full max-w-3xl min-h-[500px] max-h-[90vh] bg-white shadow-xl border border-base-200 flex flex-col justify-between overflow-hidden max-sm:rounded-none max-sm:h-full rounded-lg mx-auto">
+            <Header />
+            <div className="flex-1 overflow-auto flex flex-col">{children}</div>
+          </div>
         </div>
 
         {/* Desktop layout - full-width with sidebar */}
