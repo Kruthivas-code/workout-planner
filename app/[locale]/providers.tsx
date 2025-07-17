@@ -28,7 +28,7 @@ export const Providers = ({ children, locale }: PropsWithChildren<{ locale: stri
       <NuqsAdapter>
         <QueryClientProvider client={queryClient}>
           <I18nProviderClient locale={locale}>
-            <ThemeProvider attribute="class" defaultTheme="system" disableTransitionOnChange enableSystem>
+            <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange enableSystem={false}>
               <LocaleDetector />
               <Toaster />
               <ToastSonner />
