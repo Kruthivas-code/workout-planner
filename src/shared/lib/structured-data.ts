@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-case-declarations */
 import React from "react";
-import { useEffect, useState } from "react";
 
 import { getServerUrl } from "@/shared/lib/server-url";
 import { SiteConfig } from "@/shared/config/site-config";
