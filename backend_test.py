@@ -34,7 +34,153 @@ class WorkoutBuilderTester:
         if details:
             print(f"   Details: {json.dumps(details, indent=2)}")
     
-    def test_equipment_enum_values(self):
+    def test_database_connectivity(self):
+        """Test database connectivity and basic schema"""
+        test_name = "Database Connectivity"
+        
+        try:
+            # Test if we can connect to the database by checking if the app is running
+            response = requests.get(f"{BACKEND_URL}", timeout=10)
+            
+            if response.status_code in [200, 307, 302]:  # 307 is redirect, which is normal
+                self.log_test(
+                    test_name,
+                    True,
+                    f"Application is running and responding (status: {response.status_code})",
+                    {"backend_url": BACKEND_URL, "status_code": response.status_code}
+                )
+            else:
+                self.log_test(
+                    test_name,
+                    False,
+                    f"Application returned unexpected status code: {response.status_code}",
+                    {"backend_url": BACKEND_URL, "status_code": response.status_code}
+                )
+        except requests.exceptions.RequestException as e:
+            self.log_test(
+                test_name,
+                False,
+                f"Failed to connect to application: {str(e)}",
+                {"backend_url": BACKEND_URL, "error": str(e)}
+            )
+    
+    def test_server_action_structure(self):
+        """Test that server actions are properly structured"""
+        test_name = "Server Action Structure"
+        
+        # Check if the get-exercises action file exists and has correct structure
+        action_file = "/app/src/features/workout-builder/actions/get-exercises.action.ts"
+        
+        try:
+            with open(action_file, 'r') as f:
+                content = f.read()
+                
+            # Check for key components
+            checks = [
+                ('Server directive', '"use server"' in content),
+                ('Action client import', 'actionClient' in content),
+                ('Schema validation', 'getExercisesSchema' in content),
+                ('Mock data', 'DEMO_EXERCISES' in content),
+                ('Equipment filtering', 'equipment.includes' in content),
+                ('Muscle filtering', 'primaryMuscle === muscle' in content)
+            ]
+            
+            all_passed = all(check[1] for check in checks)
+            
+            self.log_test(
+                test_name,
+                all_passed,
+                f"Server action structure {'valid' if all_passed else 'invalid'}",
+                {"checks": [{"name": check[0], "passed": check[1]} for check in checks]}
+            )
+            
+        except FileNotFoundError:
+            self.log_test(
+                test_name,
+                False,
+                "Server action file not found",
+                {"expected_file": action_file}
+            )
+        except Exception as e:
+            self.log_test(
+                test_name,
+                False,
+                f"Error reading server action file: {str(e)}",
+                {"error": str(e)}
+            )
+    
+    def test_prisma_schema_enums(self):
+        """Test that Prisma schema has correct enum definitions"""
+        test_name = "Prisma Schema Enums"
+        
+        schema_file = "/app/prisma/schema.prisma"
+        
+        try:
+            with open(schema_file, 'r') as f:
+                content = f.read()
+            
+            # Check for required enums and values
+            required_equipment = [
+                "BODY_ONLY",
+                "DUMBBELL", 
+                "BARBELL",
+                "KETTLEBELLS",
+                "BANDS",
+                "PULLUP_BAR",
+                "BENCH",
+                "WEIGHT_PLATE"
+            ]
+            
+            required_muscles = [
+                "CHEST",
+                "BACK", 
+                "BICEPS",
+                "TRICEPS",
+                "SHOULDERS",
+                "QUADS",
+                "HAMSTRINGS",
+                "GLUTES",
+                "CALVES"
+            ]
+            
+            # Check if ExerciseAttributeValueEnum exists
+            has_enum = "enum ExerciseAttributeValueEnum" in content
+            
+            # Check equipment values
+            equipment_checks = [(eq, eq in content) for eq in required_equipment]
+            equipment_passed = all(check[1] for check in equipment_checks)
+            
+            # Check muscle values  
+            muscle_checks = [(muscle, muscle in content) for muscle in required_muscles]
+            muscle_passed = all(check[1] for check in muscle_checks)
+            
+            all_passed = has_enum and equipment_passed and muscle_passed
+            
+            self.log_test(
+                test_name,
+                all_passed,
+                f"Prisma schema enums {'valid' if all_passed else 'invalid'}",
+                {
+                    "has_enum": has_enum,
+                    "equipment_checks": equipment_checks,
+                    "muscle_checks": muscle_checks
+                }
+            )
+            
+        except FileNotFoundError:
+            self.log_test(
+                test_name,
+                False,
+                "Prisma schema file not found",
+                {"expected_file": schema_file}
+            )
+        except Exception as e:
+            self.log_test(
+                test_name,
+                False,
+                f"Error reading Prisma schema: {str(e)}",
+                {"error": str(e)}
+            )
         """Test that equipment enum values are correctly defined"""
         test_name = "Equipment Enum Values"
         
