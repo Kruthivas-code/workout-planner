@@ -8,10 +8,11 @@ import requests
 import json
 import sys
 import os
+import subprocess
 from typing import List, Dict, Any
 
 # Get the backend URL from environment or use default
-BACKEND_URL = os.getenv('REACT_APP_BACKEND_URL', 'http://localhost:3000')
+BACKEND_URL = os.getenv('NEXT_PUBLIC_APP_URL', 'http://localhost:3000')
 API_BASE = f"{BACKEND_URL}/api"
 
 class WorkoutBuilderTester:
