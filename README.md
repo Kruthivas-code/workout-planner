@@ -1,7 +1,7 @@
 <div align="center">
-<img src="public/logo.png" alt="Workout.cool Logo" width="120" height="120">
-<h1>Workout.cool</h1>
-<h3><em>Modern fitness coaching platform with comprehensive exercise database</em></h3>
+<img src="public/bicep-curl-icon.svg" alt="MuscleMap Logo" width="120" height="120">
+<h1>MuscleMap</h1>
+<h3><em>Modern fitness coaching platform with comprehensive exercise database and muscle mapping</em></h3>
 <p>
 <img src="https://img.shields.io/github/contributors/Snouzy/workout-cool?style=plastic" alt="Contributors">
 <img src="https://img.shields.io/github/forks/Snouzy/workout-cool" alt="Forks">
