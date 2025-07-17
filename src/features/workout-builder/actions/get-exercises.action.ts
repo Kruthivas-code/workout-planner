@@ -106,7 +106,7 @@ const DEMO_EXERCISES = [
       },
       {
         attributeName: { name: ExerciseAttributeNameEnum.EQUIPMENT },
-        attributeValue: { value: "PULL_UP_BAR" }
+        attributeValue: { value: "PULLUP_BAR" }
       }
     ]
   },
