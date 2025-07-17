@@ -193,7 +193,7 @@ export function ResponsiveNavigation() {
       </nav>
 
       {/* Mobile Bottom Navigation - Hidden on lg+ screens */}
-      <nav className="lg:hidden relative bg-white/90 dark:bg-[#232324]/90 backdrop-blur-xl border-t border-[#4F8EF7]/15 dark:border-slate-700/50">
+      <nav className="lg:hidden relative bg-white/90 backdrop-blur-xl border-t border-[#4F8EF7]/15">
         {/* Subtle background gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#4F8EF7]/3 via-transparent to-[#25CB78]/3 pointer-events-none" />
 
