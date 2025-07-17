@@ -76,7 +76,7 @@ export const ExerciseListItem = React.memo(function ExerciseListItem({
 
       {exercise.fullVideoImageUrl && (
         <div
-          className="relative h-10 w-10 rounded overflow-hidden shrink-0 bg-slate-200 dark:bg-slate-800 cursor-pointer border border-slate-200 dark:border-slate-700/50"
+          className="relative h-10 w-10 rounded overflow-hidden shrink-0 bg-slate-200 cursor-pointer border border-slate-200"
           onClick={playVideo.setTrue}
         >
           <Image
