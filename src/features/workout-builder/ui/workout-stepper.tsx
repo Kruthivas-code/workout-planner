@@ -208,36 +208,6 @@ export function WorkoutStepper() {
     );
   }
 
-  const STEPPER_STEPS: StepperStepProps[] = [
-    {
-      stepNumber: 1,
-      title: t("workout_builder.steps.equipment.title"),
-      description: t("workout_builder.steps.equipment.description"),
-      isActive: false,
-      isCompleted: false,
-    },
-    {
-      stepNumber: 2,
-      title: t("workout_builder.steps.muscles.title"),
-      description: t("workout_builder.steps.muscles.description"),
-      isActive: false,
-      isCompleted: false,
-    },
-    {
-      stepNumber: 3,
-      title: t("workout_builder.steps.exercises.title"),
-      description: t("workout_builder.steps.exercises.description"),
-      isActive: false,
-      isCompleted: false,
-    },
-  ];
-
-  const steps = STEPPER_STEPS.map((step) => ({
-    ...step,
-    isActive: step.stepNumber === currentStep,
-    isCompleted: step.stepNumber < currentStep,
-  }));
-
   const renderStepContent = () => {
     switch (currentStep) {
       case 1:
