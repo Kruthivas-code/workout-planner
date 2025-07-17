@@ -75,7 +75,7 @@ export function ResponsiveNavigation() {
       {/* Desktop Sidebar - Hidden on mobile, shown on lg+ screens */}
       <nav className="hidden lg:flex lg:flex-col lg:w-64 lg:fixed lg:left-0 lg:top-0 lg:h-full lg:bg-white/95 lg:backdrop-blur-xl lg:border-r lg:border-[#4F8EF7]/15 lg:z-50">
         {/* Sidebar header */}
-        <div className="p-6 border-b border-[#4F8EF7]/10 dark:border-slate-700/50">
+        <div className="p-6 border-b border-[#4F8EF7]/10">
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-[#4F8EF7] to-[#25CB78] rounded-lg">
               <Dumbbell size={18} className="text-white" strokeWidth={2.5} />
